@@ -1,3 +1,25 @@
+# FORK
+
+This is a fork of Monsterlove's old code. I've always enjoyed this pattern of FSM. This version includes the original and the following changes:
+
+## Minor changes:
+  * Project is upgraded to 2019.4 LTS
+  * Code is isolated into assembly definitions.
+  * Some (not all) unit tests pass.
+  
+## Major Changes
+  * `StateMachine` no longer expects a mono behaviour. This was always the biggest issue i had with this code. 
+  * `StateMachineRunner` is now a singleton that keeps track of all StateMachines.
+  * `StateMachine`s must now be manually cleaned up by calling `StateMachine.Dispose()` or you will leak.
+  * `StateMachineRunner` must be manually updated to call `Update` and execute `IEnumerator`s. This is an issue for me because I want to use this code in the editor.
+
+## Upgrade Instructions
+In general, you can change your existing statemachines to use this new setup simply by:
+  * Changing the namespace to `EnemyHideout.Statemachine`.
+  * Adding a 'pump' that will call `StateMachineRunner.Update`.
+  * Clean up any usages of FSMs by calling `StateMachine.Dispose`.
+
+
 # Unity3D - Simple Finite State Machine (C#)
 
 State machines are a very effective way to manage game state, either on your main game play object (Game Over, Restart, Continue etc) or on individual actors and NPCs (AI behaviours, Animations, etc). The following is a simple state machine that should work well within any Unity context. 
