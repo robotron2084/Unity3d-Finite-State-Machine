@@ -1,0 +1,15 @@
+{
+    "name": "TestCases",
+    "references": [
+        "GUID:4da6cd26a7aa69646b1ba02353bfbdbd"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

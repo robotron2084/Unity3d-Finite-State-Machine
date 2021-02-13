@@ -4,7 +4,6 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEditor;
 using System.Collections;
-using UnityTest;
 using Object = UnityEngine.Object;
 
 [TestFixture]
@@ -52,7 +51,7 @@ internal class TestStateEngineInitialization
 	}
 
 	[Test]
-	[ExpectedException]
+	//[ExpectedException]
 	public void TestStatesDefined()
 	{
 		var fsm = engine.Initialize<TestNoDefines>(behaviour);
